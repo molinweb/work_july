@@ -1,0 +1,5 @@
+package com.molinweb.bean;
+
+public class Bean2Factory {
+
+}

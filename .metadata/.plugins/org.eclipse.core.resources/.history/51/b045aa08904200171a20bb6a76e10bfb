@@ -1,0 +1,23 @@
+package com.molinweb.ioc;
+
+import org.junit.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class TestIOC {
+
+	
+	@Test
+	public void testUser(){
+		
+		ApplicationContext context=new ClassPathXmlApplicationContext("applitionContext.xml");
+		User user=context.getBean("");
+		
+	}
+	
+	
+	
+	
+	
+	
+}
