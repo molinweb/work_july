@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="
-        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<beans
+ xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:p="http://www.springframework.org/schema/p"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-    <!-- 小哥们的第一个bean测试 -->
-	<!-- <bean id="userSpring1" class="com.molinweb.ioc.UserSpring1"></bean> -->
-	<!-- 使用静态方法工厂创建对象-->
-	<bean id="bean2" class="com.molinweb.bean.Bean2Factory" factory-method="getBean2"></bean>
+    
+	 <bean id="propertyDemo1" class="com.molinweb.property.PropertyDemo1" >
+	 		<constructor-arg name="username" value="zhubajie"></constructor-arg>
+	 </bean>
+	  <bean id="propertyDemo2" class="com.molinweb.property.ProprertyDemo2" >
+	 		<property name="bookName" value="已经经"></property>
+	 </bean>
+	 
+	 <!-- 注入对象类型  -->
+	 <!-- 1.配置service以及dao对象  -->
+	  <bean id="userDao" class="com.molinweb.ioc.UserDao" ></bean>
+	  <bean id="userService" class="com.molinweb.ioc.UserService" >
+	   			<!-- 注入dao对象  -->
+	             <property name="userDao"  ref="userDao"></property>
+	  </bean>
+	 
 </beans>
